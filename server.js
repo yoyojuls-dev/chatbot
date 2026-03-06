@@ -1,3 +1,9 @@
+const express = require("express");
+const path = require("path");
+
+
+
+
 // server.js
 const express = require('express');
 const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require("@google/generative-ai");
@@ -7,6 +13,15 @@ require('dotenv').config(); // Optional: Use dotenv for easier local environment
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(express.json());
+
+// Serve frontend files
+app.use(express.static(path.join(__dirname, "public")));
+
+// Homepage
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 // --- Configuration ---
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey) {
