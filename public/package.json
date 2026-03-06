@@ -1,0 +1,21 @@
+{
+    "name": "olfu-chatbot-web",
+    "version": "1.0.0",
+    "description": "Web interface for OLFU SHS Chatbot",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "gemini",
+      "chatbot",
+      "express"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@google/generative-ai": "^0.15.0", 
+      "express": "^4.19.2"             
+    }
+  }

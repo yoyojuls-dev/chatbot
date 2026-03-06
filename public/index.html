@@ -1,0 +1,65 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <title>OLFU SHS Chatbot (QC)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Name Input Modal (Keep as is) -->
+    <div id="nameModalOverlay">
+        <div id="nameModalContent">
+            <h3>Welcome!</h3>
+            <p>Please enter your name to personalize your chat experience.</p>
+            <div class="modal-input-group">
+                 <label for="nameInputModal">Name:</label>
+                 <input type="text" id="nameInputModal" placeholder="Your Name" autofocus>
+            </div>
+            <button id="submitNameButton">Start Chatting</button>
+        </div>
+    </div>
+    <!-- End Name Input Modal -->
+
+    <div class="container">
+        <!-- MODIFIED HEADER -->
+        <header>
+            <div class="header-text"> <!-- Wrapper for text -->
+                <h1>SHS - OLFU - QC CAMPUS CHATBOT</h1>
+                <h2>This is only exclusive for the SHS queries of OLFU-QC</h2>
+            </div>
+            <img src="olfulogo.png" alt="OLFU Logo" class="header-logo"> <!-- Logo added -->
+        </header>
+        <!-- END MODIFIED HEADER -->
+
+        <div id="chatbox">
+            <div id="messages">
+                <!-- Welcome Message will be added by JavaScript -->
+            </div>
+            <div id="loading" class="message model" style="display: none;">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+             <div id="error" class="message error" style="display: none;"></div>
+            <div id="input-area">
+                <textarea id="userInput" placeholder="Type your message here..." rows="1" disabled></textarea>
+                <button id="sendButton" title="Send Message" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M3.478 2.405a.75.75 0 0 0-.926.94l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.405Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+         <footer>
+             <p>Note: This chatbot focuses on the Senior High School program at the OLFU Quezon City Campus. Information is based on available data and may be subject to change.</p>
+         </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
