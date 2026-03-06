@@ -160,13 +160,17 @@ app.get('/api/health', (req, res) => {
 });
 
 // --- Start Server ---
-app.listen(port, () => {
+if (require.main === module) {
+  app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
     console.log("Serving static files from 'public' directory.");
     if (Object.keys(activeChatSessions).length > 0) {
-         console.warn("Warning: Server restarted, existing in-memory chat sessions were lost.");
+      console.warn("Warning: Server restarted, existing in-memory chat sessions were lost.");
     }
-});
+  });
+}
+
+module.exports = app;
 
 // --- Graceful Shutdown (Optional) ---
 process.on('SIGINT', () => {
