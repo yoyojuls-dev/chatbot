@@ -75,6 +75,10 @@ const SESSION_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes timeout
 app.use(express.json()); // To parse JSON request bodies
 app.use(express.static('public')); // Serve static files (HTML, CSS, client JS)
 
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
 // --- API Endpoint for Chat ---
 app.post('/api/chat', async (req, res) => {
     const userMessage = req.body.message;
